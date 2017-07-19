@@ -1,26 +1,22 @@
 import React from 'react'
 import store from './store'
+import { connect } from 'react-redux'
 
 class CommentBox extends React.Component{
-  state = {
-    comments:store.getState()
-  }
   //渲染还是需要state改变才行，没有直接给state赋值，不违背redux思想
   handleSubmit = (e) =>{
     e.preventDefault();
     let comment = this.input.value
     store.dispatch({type:'ADD_COMMENT', comment:comment});//修改数据
-    this.setState({
-      comments:store.getState()
-    })
     this.form.reset();
   }
   render(){
     //let comments = store.getState()//获取数据
+    console.log(store.getState());
     return(
       <div className="bottom">
         {
-          this.state.comments.map(item =>
+          store.getState().map(item =>
             <li key={Math.random()}>{item}</li>
           )
         }
@@ -32,4 +28,9 @@ class CommentBox extends React.Component{
     )
   }
 }
-export default CommentBox
+
+const mapStateToProps = (state) => ({
+  comments:state
+})
+
+export default connect(mapStateToProps)(CommentBox)
