@@ -1,6 +1,7 @@
 .top,.bottom{
   background-color: teal;
   width: 70%;
+  overflow: hidden;
   margin: 70px auto;
   height: 200px;
 }
@@ -22,6 +23,9 @@
   font-weight: 600;
 }
 .number{
+  display: block;
+  margin-top: 170px;
   font-size: 20px;
+  margin-left: 700px;
   color: #fff;
 }

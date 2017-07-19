@@ -5,7 +5,7 @@ class Postbody extends React.Component{
     return(
       <div className="top">
         <span className="number">
-          {this.props.length}
+          0
         </span>
       </div>
     )
