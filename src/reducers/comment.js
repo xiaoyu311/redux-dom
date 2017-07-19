@@ -8,6 +8,5 @@ export default function commentReducer(state = comments, action) {
       return [...state, action.comment]
     default:
       return state;
-
   }
 }
