@@ -4,7 +4,9 @@ class Postbody extends React.Component{
   render(){
     return(
       <div className="top">
-        Postbody
+        <span className="number">
+          {this.props.length}
+        </span>
       </div>
     )
   }
