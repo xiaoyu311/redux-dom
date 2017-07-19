@@ -1,25 +1,19 @@
 import React from 'react'
+import store from './store'
 
 class CommentBox extends React.Component{
-
-  state = {
-    comments:[
-      '第一条','第二条'
-    ]
-  }
   handleSubmit = (e) =>{
     e.preventDefault();
     let comment = this.input.value
-    this.setState({
-      comments:[...this.state.comments,comment]
-    })
+    store.dispatch({type:'ADD_COMMENT', comment:comment});//修改数据
     this.form.reset();
   }
   render(){
+    let comments = store.getState()//获取数据
     return(
       <div className="bottom">
         {
-          this.state.comments.map(item =>
+          comments.map(item =>
             <li key={Math.random()}>{item}</li>
           )
         }
