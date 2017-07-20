@@ -8,11 +8,13 @@ class Postbody extends React.Component{
     store.dispatch({type:'ADD_LIKE'})
   }
   render(){
+    let {PostId, comments} = this.props
     return(
       <div className="top">
+        <h1>{this.props.PostId}</h1>
         <span onClick={this.handleClick} className="like">{this.props.likes}赞</span>
         <span className="number">
-          {this.props.comments.length}
+          {comments.filter( item => item.PostId === PostId).length}
         </span>
       </div>
     )

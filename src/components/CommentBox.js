@@ -7,18 +7,21 @@ class CommentBox extends React.Component{
   handleSubmit = (e) =>{
     e.preventDefault();
     let comment = this.input.value
-    store.dispatch({type:'ADD_COMMENT', comment:comment});
+    store.dispatch({type:'ADD_COMMENT', comment:{PostId:this.props.PostId, comment:comment}});
     //store.dispatch()修改数据  这个对象就是action
     this.form.reset();
   }
   render(){
-    //let comments = store.getState()//获取数据
     console.log(store.getState());
+    //let comments = store.getState()//获取数据
+    let {PostId, comments} = this.props
+    console.log(comments);
     return(
       <div className="bottom">
         {
-          this.props.comments.map(item =>
-            <li key={Math.random()}>{item}</li>
+          // this.props.comments.map(item =>
+          comments.filter( item => item.PostId === PostId).map(item =>
+            <li key={Math.random()}>{item.comment}</li>
           )
         }
         <form ref={value => this.form = value} onSubmit={this.handleSubmit}>

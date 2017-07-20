@@ -4,10 +4,11 @@ import CommentBox from './CommentBox'
 
 class PostPage extends React.Component{
   render(){
+    let { id } = this.props.match.params
     return(
       <div>
-        <Postbody />
-        <CommentBox />
+        <Postbody PostId={id} />
+        <CommentBox PostId={id} />
       </div>
     )
   }

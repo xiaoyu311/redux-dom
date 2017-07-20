@@ -14,7 +14,7 @@ class App extends Component {
           <BrowserRouter>
             <Switch>
               <Route path="/" exact component={HomePage} />
-              <Route path="/post/1" component={PostPage} />
+              <Route path="/post/:id" component={PostPage} />
             </Switch>
           </BrowserRouter>
         </Provider>
