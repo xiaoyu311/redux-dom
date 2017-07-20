@@ -24,8 +24,12 @@
 }
 .number{
   display: block;
-  margin-top: 170px;
   font-size: 20px;
   margin-left: 700px;
   color: #fff;
+}
+.like{
+  display: block;
+  margin-left: 670px;
+  margin-top: 120px;
 }
