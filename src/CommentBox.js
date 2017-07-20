@@ -35,3 +35,9 @@ const mapStateToProps = (state) => ({
 })
 
 export default connect(mapStateToProps)(CommentBox)
+
+//connect 连接 store 和组件
+// mapStateToProps：把 store 中的数据（一部分）映射为当前组件的 props
+// map 的意思是“映射”
+// State 指的是 store 状态树（ State Tree ），也就是 store 的实际数据
+// Porps 就是属性
