@@ -7,7 +7,8 @@ class CommentBox extends React.Component{
   handleSubmit = (e) =>{
     e.preventDefault();
     let comment = this.input.value
-    store.dispatch({type:'ADD_COMMENT', comment:comment});//修改数据
+    store.dispatch({type:'ADD_COMMENT', comment:comment});
+    //store.dispatch()修改数据  这个对象就是action
     this.form.reset();
   }
   render(){
@@ -16,7 +17,7 @@ class CommentBox extends React.Component{
     return(
       <div className="bottom">
         {
-          store.getState().map(item =>
+          this.props.comments.map(item =>
             <li key={Math.random()}>{item}</li>
           )
         }
