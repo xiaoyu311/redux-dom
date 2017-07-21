@@ -1,4 +1,4 @@
-import postReducer from './post'
+import postReducer from './posts'
 import commentReducer from './comment'
 import { combineReducers } from 'redux'
 

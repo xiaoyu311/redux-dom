@@ -12,10 +12,10 @@ class CommentBox extends React.Component{
     this.form.reset();
   }
   render(){
-    console.log(store.getState());
+    //console.log(store.getState());
     //let comments = store.getState()//获取数据
     let {PostId, comments} = this.props
-    console.log(comments);
+    //console.log(comments);
     return(
       <div className="bottom">
         {
